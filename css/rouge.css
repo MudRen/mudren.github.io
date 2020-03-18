@@ -1,5 +1,5 @@
 .highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; padding: 5px; }
+.highlight table pre { margin: 0; }
 .highlight .gh {
   color: #999999;
 }
@@ -187,27 +187,7 @@
   color: #f92672;
 }
 
-div[class="highlight"] > pre > code[class*="language-"] {
+div[class="highlighte"] > pre[class="highlight"] > code {
   background:black;
-}
-div[class="highlight"] > pre {
-  background:black;
-}
-figure[class="highlight"] > pre > code[class*="language-"] {
-  text-align:left;
-  background:black;
-}
-figure[class="highlight"] > pre > code[class*="language-"] td > pre{
-  text-align:left;
-  background:black;
-}
-figure[class="highlight"] > pre {
-  text-align:left;
-  background:black;
-}
-div[class="highlighter-rouge"] > pre[class="highlight"] > code{
-  background:black;
-}
-div[class="highlighter-rouge"] > pre[class="highlight"] {
-  background:black;
+  padding: 5px;
 }
