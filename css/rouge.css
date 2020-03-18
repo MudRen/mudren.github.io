@@ -188,6 +188,6 @@
 }
 
 div[class="highlight"] > pre {
-  background:black;
-  padding: 5px;
+  background: #384548;
+  padding: 2em;
 }
