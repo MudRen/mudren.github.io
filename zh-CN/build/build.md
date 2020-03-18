@@ -22,7 +22,7 @@ v2019 版目前支持在以下系统中编译：ubuntu 18.04+ (包括 WSL), rasp
     # 如果要使用 v2017 版还需以下指令切换版本
     git checkout v2017
 
-## Ubuntu && Raspberry 系统编译
+## Ubuntu & Raspberry 系统编译
 
 Ubuntu 系统请执行以下指令安装编译所需的包，包括编译 v2017 和 v2019 所需的库。
 
@@ -66,24 +66,24 @@ CYGWIN下载地址： http://www.cygwin.org/setup-x86_64.exe
 
 需要安装以下包，推荐使用阿里云镜像下载包：http://mirrors.aliyun.com/cygwin/
 
-    autoconf
-    automake
-    binutils
-    bison
-    cmake
-    gcc-core
-    gcc-g++
-    git
-    libcrypt-devel
-    libevent-devel
-    libiconv-devel
-    libicu-devel
-    libmariadb-devel
-    libmysqlclient-devel
-    libpcre-devel
-    make
-    python3
-    zlib-devel
+* autoconf
+* automake
+* binutils
+* bison
+* cmake
+* gcc-core
+* gcc-g++
+* git
+* libcrypt-devel
+* libevent-devel
+* libiconv-devel
+* libicu-devel
+* libmariadb-devel
+* libmysqlclient-devel
+* libpcre-devel
+* make
+* python3
+* zlib-devel
 
 编译方式和 Ubuntu 系统下一样，在 `fluffos` 目录下执行以下指令：
 
