@@ -1,6 +1,6 @@
 ---
 layout: default
-title: FluffOS
+title: FluffOS Official website
 ---
 
 FluffOS is the next generation of MudOS. It starts as an collection of patches on top of last release of MudOS. It has
@@ -14,12 +14,9 @@ run on FluffOS! Feel free to contact me for help. The goal is to migrate everyon
 
 [ALL RELEASES](https://github.com/fluffos/fluffos/releases)
 
-v2017: Current release (branch v2017), bugfix only, support ubuntu 16.04, centos 7, cygwin, using autoconf build
- system, critical
- bugfix only.
+ * v2017: Current release (branch v2017), bugfix only, support ubuntu 16.04, centos 7, cygwin, using autoconf build system, critical bugfix only.
 
-v2019: Currently in pre-release (branch master), cmake build system, supports ubuntu 18.04, OSX 10.15, and MSYS2
-/mingw64
+ * v2019: Currently in pre-release (branch master), cmake build system, supports ubuntu 18.04, OSX 10.15, and MSYS2/mingw64
 
 ## ChangeLog
 
@@ -50,7 +47,7 @@ TODO
 
 ## License & Copyright
 
-Copyright 2019-2020 Yucong Sun
+> Copyright 2019-2020 Yucong Sun
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
