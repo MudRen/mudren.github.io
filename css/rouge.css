@@ -189,8 +189,5 @@
 
 div[class="highlight"] > pre {
   background:black;
-}
-
-div[class="highlight"] > pre[class="highlight"] > code {
   padding: 5px;
 }
