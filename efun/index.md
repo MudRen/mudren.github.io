@@ -4,6 +4,19 @@ title: EFUN
 ---
 
 
+### all
+
+<div class='container'>
+<div class='row'>
+<div class='col-sm-3'>
+<div><a href='all/list.html'>list</a></div>
+</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+</div>
+</div>
+
 ### arrays
 
 <div class='container'>
@@ -221,10 +234,13 @@ title: EFUN
 <div><a href='contrib/query_replaced_program.html'>query_replaced_program</a></div>
 </div>
 <div class='col-sm-3'>
-<div><a href='contrib/real_time.html'>real_time</a></div>
+<div><a href='contrib/questions.html'>questions</a></div>
 </div>
 </div>
 <div class='row'>
+<div class='col-sm-3'>
+<div><a href='contrib/real_time.html'>real_time</a></div>
+</div>
 <div class='col-sm-3'>
 <div><a href='contrib/remove_charmode.html'>remove_charmode</a></div>
 </div>
@@ -234,11 +250,11 @@ title: EFUN
 <div class='col-sm-3'>
 <div><a href='contrib/remove_interactive.html'>remove_interactive</a></div>
 </div>
+</div>
+<div class='row'>
 <div class='col-sm-3'>
 <div><a href='contrib/remove_shadow.html'>remove_shadow</a></div>
 </div>
-</div>
-<div class='row'>
 <div class='col-sm-3'>
 <div><a href='contrib/repeat_string.html'>repeat_string</a></div>
 </div>
@@ -248,11 +264,11 @@ title: EFUN
 <div class='col-sm-3'>
 <div><a href='contrib/restore_from_string.html'>restore_from_string</a></div>
 </div>
+</div>
+<div class='row'>
 <div class='col-sm-3'>
 <div><a href='contrib/roll_MdN.html'>roll_MdN</a></div>
 </div>
-</div>
-<div class='row'>
 <div class='col-sm-3'>
 <div><a href='contrib/send_nullbyte.html'>send_nullbyte</a></div>
 </div>
@@ -262,11 +278,11 @@ title: EFUN
 <div class='col-sm-3'>
 <div><a href='contrib/shuffle.html'>shuffle</a></div>
 </div>
+</div>
+<div class='row'>
 <div class='col-sm-3'>
 <div><a href='contrib/store_class_member.html'>store_class_member</a></div>
 </div>
-</div>
-<div class='row'>
 <div class='col-sm-3'>
 <div><a href='contrib/store_variable.html'>store_variable</a></div>
 </div>
@@ -276,11 +292,11 @@ title: EFUN
 <div class='col-sm-3'>
 <div><a href='contrib/terminal_colour.html'>terminal_colour</a></div>
 </div>
+</div>
+<div class='row'>
 <div class='col-sm-3'>
 <div><a href='contrib/test_load.html'>test_load</a></div>
 </div>
-</div>
-<div class='row'>
 <div class='col-sm-3'>
 <div><a href='contrib/upper_case.html'>upper_case</a></div>
 </div>
@@ -290,7 +306,6 @@ title: EFUN
 <div class='col-sm-3'>
 <div><a href='contrib/zonetime.html'>zonetime</a></div>
 </div>
-<div>&nbsp;</div>
 </div>
 </div>
 
@@ -463,6 +478,9 @@ title: EFUN
 <div class='container'>
 <div class='row'>
 <div class='col-sm-3'>
+<div><a href='functions/apply.html'>apply</a></div>
+</div>
+<div class='col-sm-3'>
 <div><a href='functions/bind.html'>bind</a></div>
 </div>
 <div class='col-sm-3'>
@@ -471,7 +489,6 @@ title: EFUN
 <div class='col-sm-3'>
 <div><a href='functions/functionp.html'>functionp</a></div>
 </div>
-<div>&nbsp;</div>
 </div>
 </div>
 
@@ -1225,6 +1242,6 @@ title: EFUN
 
 
 
-This page is auto generated on 2020-03-14 20:49:23 PDT for [689fb58f](https://github.com/fluffos/fluffos/tree/689fb58f).
+This page is auto generated on 2020-03-18 12:39:26 CST for [0c1cc40](https://github.com/fluffos/fluffos/tree/0c1cc40).
 
 
