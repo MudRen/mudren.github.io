@@ -4,19 +4,6 @@ title: EFUN
 ---
 
 
-### all
-
-<div class='container'>
-<div class='row'>
-<div class='col-sm-3'>
-<div><a href='all/list.html'>list</a></div>
-</div>
-<div>&nbsp;</div>
-<div>&nbsp;</div>
-<div>&nbsp;</div>
-</div>
-</div>
-
 ### arrays
 
 <div class='container'>
@@ -1242,6 +1229,6 @@ title: EFUN
 
 
 
-This page is auto generated on 2020-03-18 12:39:26 CST for [0c1cc40](https://github.com/fluffos/fluffos/tree/0c1cc40).
+This page is auto generated on 2020-03-18 15:39:03 CST for [9bdfddb](https://github.com/fluffos/fluffos/tree/9bdfddb).
 
 
