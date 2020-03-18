@@ -3,20 +3,17 @@ layout: default
 title: FluffOS Official website
 ---
 
-FluffOS is the next generation of MudOS. It starts as an collection of patches on top of last release of MudOS. It has
- gone through major rewrites and bugfixes and maintained backward compatibility with existing mudlibs.
+FluffOS is the next generation of MudOS. It starts as an collection of patches on top of last release of MudOS. It has gone through major rewrites and bugfixes and maintained backward compatibility with existing mudlibs.
 
-I'm always eager to help people migrate to FluffOS, if you have an working mud that you want to migrate (hack, even if
-you just have bunch of files laying around, send it over nonetheless!), send to me and I will make it
-run on FluffOS! Feel free to contact me for help. The goal is to migrate everyone!
+I'm always eager to help people migrate to FluffOS, if you have an working mud that you want to migrate (hack, even if you just have bunch of files laying around, send it over nonetheless!), send to me and I will make it run on FluffOS! Feel free to contact me for help. The goal is to migrate everyone!
 
 ## Current Release
 
 [ALL RELEASES](https://github.com/fluffos/fluffos/releases)
 
- * v2017: Current release (branch v2017), bugfix only, support ubuntu 16.04, centos 7, cygwin, using autoconf build system, critical bugfix only.
+* v2017: Current release (branch v2017), bugfix only, support ubuntu 16.04, centos 7, cygwin, using autoconf build system, critical bugfix only.
 
- * v2019: Currently in pre-release (branch master), cmake build system, supports ubuntu 18.04, OSX 10.15, and MSYS2/mingw64
+* v2019: Currently in pre-release (branch master), cmake build system, supports ubuntu 18.04, OSX 10.15, and MSYS2/mingw64
 
 ## ChangeLog
 
@@ -30,7 +27,7 @@ run on FluffOS! Feel free to contact me for help. The goal is to migrate everyon
 
 ## Demo
 
-TODO
+    // TODO
 
 ## v2017 Features
 
