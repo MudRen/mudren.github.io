@@ -21,6 +21,9 @@ TARGET_DIR=./stdlib
 TARGET_DIR=./zh-CN
 ./gen_index.py $TARGET_DIR zh-CN $TAG > $TARGET_DIR/index.md
 
+TARGET_DIR=./zh-CN/apply
+./gen_index.py $TARGET_DIR Applies $TAG > $TARGET_DIR/index.md
+
 # Copy rest of docs
 for topic in concepts driver lpc; do
   TARGET_DIR=./$topic
