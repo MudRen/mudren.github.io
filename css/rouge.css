@@ -185,3 +185,28 @@
 .highlight .o {
   color: #f92672;
 }
+
+div[class="highlight"] > pre > code[class*="language-"] {
+  background:black;
+}
+div[class="highlight"] > pre {
+  background:black;
+}
+figure[class="highlight"] > pre > code[class*="language-"] {
+  text-align:left;
+  background:black;
+}
+figure[class="highlight"] > pre > code[class*="language-"] td > pre{
+  text-align:left;
+  background:black;
+}
+figure[class="highlight"] > pre {
+  text-align:left;
+  background:black;
+}
+div[class="highlighter-rouge"] > pre[class="highlight"] > code{
+  background:black;
+}
+div[class="highlighter-rouge"] > pre[class="highlight"] {
+  background:black;
+}
