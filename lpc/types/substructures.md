@@ -289,7 +289,8 @@ Err 1:
 
 Diagnosis:
 
-    You have done 'ranging' twice, e.g. something like x[2][0..<2][1..2] isn't a valid lvalue
+    You have done 'ranging' twice, e.g. something like x[2][0..<2][1..2]
+    isn't a valid lvalue
 
 Err 2:
 
@@ -321,7 +322,8 @@ Err 5:
 
 Diagnosis:
 
-    Oops, we are out of luck here :) Try looking at your lvalue more carefully, and see that it obeys the rules described in section 3 above.
+    Oops, we are out of luck here :) Try looking at your lvalue more carefully,
+    and see that it obeys the rules described in section 3 above.
 
 ### Coming attractions
 
