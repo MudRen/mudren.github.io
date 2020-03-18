@@ -7,7 +7,27 @@ title: zh-CN
 ### apply
 
 <div class='container'>
-<div><a href='apply/index.html'>applies</a></div>
+<div class='row'>
+<div class='col-sm-3'>
+<div><a href='apply/index.html'>index</a></div>
+</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+</div>
+</div>
+
+### build
+
+<div class='container'>
+<div class='row'>
+<div class='col-sm-3'>
+<div><a href='build/build.html'>build</a></div>
+</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+</div>
 </div>
 
 ### efun
@@ -951,4 +971,6 @@ title: zh-CN
 
 
 
-This page is auto generated on 2020-03-18 15:46:18 CST for [e63e7be](https://github.com/fluffos/fluffos/tree/e63e7be).
+This page is auto generated on 2020-03-18 17:05:13 CST for [678e247](https://github.com/fluffos/fluffos/tree/678e247).
+
+

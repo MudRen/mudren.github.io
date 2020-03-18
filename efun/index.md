@@ -1229,6 +1229,6 @@ title: EFUN
 
 
 
-This page is auto generated on 2020-03-18 15:46:18 CST for [e63e7be](https://github.com/fluffos/fluffos/tree/e63e7be).
+This page is auto generated on 2020-03-18 17:05:13 CST for [678e247](https://github.com/fluffos/fluffos/tree/678e247).
 
 
