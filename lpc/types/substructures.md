@@ -14,26 +14,26 @@ strings/buffers/arrays/mappings (for mappings only indexing is
 available) as well as means of changing the values of data
 via lvalues (i.e. 'assignable values') formed by indexing/ranging.
 
-As an example, if we set str as "abcdefg", str[0] will
-be 'a', str[1] 'b' etc. Similarly, the nth element of an array
-arr is accessed via arr[n-1], and the value corresponding to
+As an example, if we set str as `"abcdefg"`, `str[0]` will
+be `'a'`, `str[1]` `'b'` etc. Similarly, **the nth element of an array
+arr is accessed via arr[n-1]**, and the value corresponding to
 key x of mapping m, m[x]. The '<' token can be used to denote
 indexing from the right, i.e. `str[<x]` means `str[strlen(str) - x]`
 if str is a string. More generally `arr[<x]` means `arr[sizeof(arr)-x]`.
 (Note that sizeof(arr) is the same as strlen if arr is a string).
 
 Indexed values are reasonable lvalues, so one could do for e.g.
-str[0] = 'g' to change the 1st character of str to g. Although it is
-possible to use ({ 1,2 })[1] as a value (which is currently optimized
+`str[0] = 'g'` to change the 1st character of str to g. Although it is
+possible to use `({ 1,2 })[1]` as a value (which is currently optimized
 in MudOS to compile to 2 directly), it is not possible to use it as an
-lvalue. It is similarly not possible to use ([ "a" : "b" ])["c"] as an
+lvalue. It is similarly not possible to use `([ "a" : "b" ])["c"]` as an
 lvalue (Even if we did support it, it would be useless, since there
 is no other reference to the affected mapping). I will describe in
 more detail later what are the actually allowed lvalues.
 
 Another method of obtaining a subpart of an LPC value is via
-ranging. An example of this is str[1..2], where for str being
-"abcdefg", gives "bc". In general str[n1..n2] returns a substring
+ranging. An example of this is `str[1..2]`, where for str being
+`"abcdefg"`, gives `"bc"`. In general `str[n1..n2]` returns a substring
 consisting of the (n1+1) to (n2+1)th characters of str. If n1 or n2
 is negative, and the driver is compiled with OLD_RANGE_BEHAVIOR
 defined, then it would take the negative indices to mean counting
@@ -41,15 +41,15 @@ from the end. Unlike indexing though, ranges with indexes which are
 out of bounds do not give an error. Instead if a maximal subrange
 can be found within the range requested that lies within the bounds
 of the indexed value, it will be used. So for e.g., without
-OLD_RANGE_BEHAVIOR, str[-1..2] is the same as str[0..2]. All other
+OLD_RANGE_BEHAVIOR, `str[-1..2]` is the same as `str[0..2]`. All other
 out of bounds ranges will return "" instead, which corresponds
 to the idea that there is no (hence there is one, namely the empty one)
 subrange within the range provided that is within bounds. Similarly,
-for array elements, arr[n1..n2] represents the slice of the array
+for array elements, `arr[n1..n2]` represents the slice of the array
 with elements (n1+1) to (n2+1), unless out of bounds occur.
 OLD_RANGE_BEHAVIOR is only supported for buffers and strings. However,
 I suggest you not use it since it maybe confusing at times (i.e. in
-str[x..y] when x is not known at hand, it may lead to an unexpected
+`str[x..y]` when x is not known at hand, it may lead to an unexpected
 result if x is negative). One can however, also use < in ranging
 to mean counting from the end. So `str[<x..<y]` means
 `str[strlen(str)-x..strlen(str)-y]`.
@@ -58,10 +58,10 @@ Remark: If OLD_RANGE_BEHAVIOR is defined, then the priority of <
 is higher than the priority of checking if it's negative.
 That is, if you do `str[<x..y]`, it will mean the same
 as `str[strlen(str)-x..y]`, meaning therefore that it will
-check only now if strlen(str)-x is negative and if so,
+check only now if `strlen(str)-x` is negative and if so,
 takes it to be from the end, leading you back to x again
 
-Thus far, str[<x..<y], str[<x..y], str[x..<y], `str[<x..]` (meaning the
+Thus far, `str[<x..<y]`, `str[<x..y]`, `str[x..<y]`, `str[<x..]` (meaning the
 same as `str[<x..<1]`) and `str[x..]` (same as `str[x..<1]`) are supported.
 The same holds for arrays/buffers.
 
@@ -113,20 +113,20 @@ this :))
 Similarly, I will leave it to you to verify that
 
 ```c
-    str[sizeof(str)..sizeof(str)-1] = foo; // (3)
+str[sizeof(str)..sizeof(str)-1] = foo; // (3)
 ```
 
 would lead to `str = str + foo`. Now, we can use < in range lvalues
 as well, so (3) could have been written as
 
 ```c
-    str[<0..<1] = foo; // (4)
+str[<0..<1] = foo; // (4)
 ```
 
 or even
 
 ```c
-    str[<0..] = foo; // (5)
+str[<0..] = foo; // (5)
 ```
 
 which is more compact and faster.
@@ -141,16 +141,16 @@ we know that when we do `x = "abc"; y = x;`, y has a new copy of the string
 "abc". (This isn't always done immediately in the driver, but whenever
 y does not have a new copy, and a change is to be made to y, then y
 will make a new copy of itself, hence effectively, y has a new copy
-in that all simple direct changes to it such as y[0] = 'g' does not
-change x) For buffers and arrays, however, when we do y = x, we don't get
+in that all simple direct changes to it such as `y[0] = 'g'` does not
+change x) For buffers and arrays, however, when we do `y = x`, we don't get
 a new copy. So what happens is if we change one, we could potentially
 change the other. This is indeed true (as has always been) for assignments
 to indexed lvalues (i.e. lvalues of the form y[0]). For range lvalues
-(i.e. x[n1..n2]), the rule is if the change of the lvalue will not
+(i.e. `x[n1..n2]`), the rule is if the change of the lvalue will not
 affect it's size (determined by sizeof for e.g.), i.e. essentially if
 n1 and n2 are within x's bounds and the value on the right hand side
 has size n2 - n1 + 1, then indeed changing x affects y, otherwise
-it will not (i.e. if you do x[0..-1] = ({ 2,3 }). This only applies
+it will not (i.e. if you do `x[0..-1] = ({ 2,3 })`. This only applies
 to arrays/buffers, for strings it will never affect y if we assign to a
 range of x.
 
