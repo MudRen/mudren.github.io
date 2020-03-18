@@ -18,8 +18,8 @@ As an example, if we set str as "abcdefg", str[0] will
 be 'a', str[1] 'b' etc. Similarly, the nth element of an array
 arr is accessed via arr[n-1], and the value corresponding to
 key x of mapping m, m[x]. The '<' token can be used to denote
-indexing from the right, i.e. str[<x] means str[strlen(str) - x]
-if str is a string. More generally arr[<x] means arr[sizeof(arr)-x].
+indexing from the right, i.e. `str[<x]` means `str[strlen(str) - x]`
+if str is a string. More generally `arr[<x]` means `arr[sizeof(arr)-x]`.
 (Note that sizeof(arr) is the same as strlen if arr is a string).
 
 Indexed values are reasonable lvalues, so one could do for e.g.
@@ -51,31 +51,34 @@ OLD_RANGE_BEHAVIOR is only supported for buffers and strings. However,
 I suggest you not use it since it maybe confusing at times (i.e. in
 str[x..y] when x is not known at hand, it may lead to an unexpected
 result if x is negative). One can however, also use < in ranging
-to mean counting from the end. So str[<x..<y] means
-str[strlen(str)-x..strlen(str)-y].
+to mean counting from the end. So `str[<x..<y]` means
+`str[strlen(str)-x..strlen(str)-y]`.
 
 Remark: If OLD_RANGE_BEHAVIOR is defined, then the priority of <
 is higher than the priority of checking if it's negative.
-That is, if you do str[<x..y], it will mean the same
-as str[strlen(str)-x..y], meaning therefore that it will
+That is, if you do `str[<x..y]`, it will mean the same
+as `str[strlen(str)-x..y]`, meaning therefore that it will
 check only now if strlen(str)-x is negative and if so,
 takes it to be from the end, leading you back to x again
 
-Thus far, str[<x..<y], str[<x..y], str[x..<y], str[<x..] (meaning the
-same as str[<x..<1]) and str[x..] (same as str[x..<1]) are supported.
+Thus far, str[<x..<y], str[<x..y], str[x..<y], `str[<x..]` (meaning the
+same as `str[<x..<1]`) and `str[x..]` (same as `str[x..<1]`) are supported.
 The same holds for arrays/buffers.
 
 Perhaps this might seem strange at first, but ranges also
 are allowed to be lvalues! The meaning of doing
 
-    str[x..y] = foo; // (1)
+```c
+str[x..y] = foo; // (1)
+```
 
 is basically 'at least' doing
 
-    str = str[0..x-1] + foo + str[y+1..]; // (2)
+```c
+str = str[0..x-1] + foo + str[y+1..]; // (2)
+```
 
 Here x can range from 0..sizeof(str) and y from -1 to
-
 sizeof(str) - 1. The reason for these bounds is because, if I
 wanted to add foo to the front,
 
@@ -95,7 +98,9 @@ assignments which essentially result in the addition
 of foo to the front as above otherwise
 
 Hence, that's the same as doing
-str = str[0..0-1] + foo + str[0..];
+
+    str = str[0..0-1] + foo + str[0..];
+
 or, what's the same
 
     str = str[0..0-1] + foo + str[-1+1..];
@@ -105,28 +110,34 @@ conforms to the prescription there if we do str[0..-1] = foo!! (Yes,
 those exclamation marks are not part of the code, and neither is
 this :))
 
-    Similarly, I will leave it to you to verify that
+Similarly, I will leave it to you to verify that
 
+```c
     str[sizeof(str)..sizeof(str)-1] = foo; // (3)
+```
 
-would lead to str = str + foo. Now, we can use < in range lvalues
+would lead to `str = str + foo`. Now, we can use < in range lvalues
 as well, so (3) could have been written as
 
+```c
     str[<0..<1] = foo; // (4)
+```
 
 or even
 
+```c
     str[<0..] = foo; // (5)
+```
 
 which is more compact and faster.
 
-Remark: The code for str[<0..] = foo; is generated at compile time
-to be identical to that for str[<0..<1] = foo; so neither
+Remark: The code for `str[<0..] = foo;` is generated at compile time
+to be identical to that for `str[<0..<1] = foo;` so neither
 should be faster than the other (in principle) at runtime,
 but (4) is faster than (3).
 
 Now we come to the part where I mentioned 'at least' above. For strings,
-we know that when we do x = "abc"; y = x;, y has a new copy of the string
+we know that when we do `x = "abc"; y = x;`, y has a new copy of the string
 "abc". (This isn't always done immediately in the driver, but whenever
 y does not have a new copy, and a change is to be made to y, then y
 will make a new copy of itself, hence effectively, y has a new copy
@@ -165,7 +176,9 @@ characters out from arr[0][1], which is currently "foo", and putting
 Now I want to discuss some simple applications.
 Some of you may know that when we are doing
 
-    sscanf("This is a test", "This %s %s test", x, y) //(6)
+```c
+sscanf("This is a test", "This %s %s test", x, y) //(6)
+```
 
 that x and y are technically lvalues. This is since what the driver
 does is to parse the original string into the format you give, and
@@ -173,12 +186,14 @@ then tries to assign the results (once all of them are parsed) to
 the lvalues that you give (here x and y). So, now that we have more
 general lvalues, we may do
 
-    x = "simmetry";
-    arr = ({ 1, 2, 3, ({ "This is " }) });
+```c
+x = "simmetry";
+arr = ({ 1, 2, 3, ({ "This is " }) });
 
-    sscanf("Written on a roadside: the char for 'y' has value 121\n",
-           "Written on %sside: the char for 'y' has value %d\n",
-           arr[3][0][<0..], x[1]); //(7)
+sscanf("Written on a roadside: the char for 'y' has value 121\n",
+        "Written on %sside: the char for 'y' has value %d\n",
+        arr[3][0][<0..], x[1]); //(7)
+```
 
 will result in arr being ({ 1, 2, 3, ({ "This is a road" }) }) and
 x being "symmetry". (See how we have extended the string in arr[3][0]
@@ -197,12 +212,12 @@ mixed tmp;
 create(){
     string *arr;
 
-    ...
+    // ...
 
     tmp = "test.'";
     arr = map_array(allocate(26), (: tmp[4]++ && tmp :));
 
-    ...
+    // ...
 } // (8)
 ```
 
@@ -221,12 +236,13 @@ obtained from a basic lvalue by indexing only indexed lvalues.
 
 The following lvalues are also valid at compile time:
 
-    (<basic lvalue> <assignment token> <rhs>)[a_1][a_2]...[a_n]
-    (<indexed lvalue> <assignment token> <rhs>)[a_1][a_2]...[a_n] // (9)
-    /* Remark: n >= 1 here */
+```c
+(<basic lvalue> <assignment token> <rhs>)[a_1][a_2]...[a_n]
+(<indexed lvalue> <assignment token> <rhs>)[a_1][a_2]...[a_n] // (9)
+/* Remark: n >= 1 here */
+```
 
-    assignment token is one of +=, -=, *=, &=, /=, %=, ^=, |=, =, <<=,
-> > =.
+assignment token is one of +=, -=, *=, &=, /=, %=, ^=, |=, =, <<=,>>=.
 
 However, because of the same reason that when we assign to a
 string, we obtain a new copy, (x = "foo")[2] = 'a' is invalidated at
@@ -238,9 +254,9 @@ this is no problem because by assigning, we share the array/buffer)
 Call the lvalues in (9) complex lvalues. Then the following is
 also a valid lvalue:
 
-    (<complex lvalue> <assignment token> <rhs>)[a_1][a_2]...[a_n] // (10)
-
-###
+```c
+(<complex lvalue> <assignment token> <rhs>)[a_1][a_2]...[a_n] // (10)
+```
 
 and if we now call the above lvalues also complex lvalues, it would
 still be consistent, i.e. (((a[0] = b)[1] = c)[2] = d)[3] is an okay
@@ -267,31 +283,45 @@ arr[2..3] itself)
 Here I put some notes on compile-time errors for valid lvalues,
 hopefully to be useful for you.
 
-Err 1: Can't do range lvalue of range lvalue
+Err 1:
 
-Diagnosis: You have done 'ranging' twice, e.g. something like
-x[2][0..<2][1..2] isn't a valid lvalue
+    Can't do range lvalue of range lvalue
 
-Err 2: Can't do indexed lvalue of range lvalue.
+Diagnosis:
 
-Diagnosis: Something like x[0..<2][3] was done.
+    You have done 'ranging' twice, e.g. something like x[2][0..<2][1..2] isn't a valid lvalue
 
-Err 3: Illegal lvalue, a possible lvalue is (x <assign> y)[a]
+Err 2:
 
-Diagnosis: Something like (x = foo)[2..3] or (x = foo) was taken to
-be an lvalue.
+    Can't do indexed lvalue of range lvalue.
 
-Err 4: Illegal to have (x[a..b] <assign> y) to be the beginning of
-an lvalue
+Diagnosis:
 
-Diagnosis: You did something as described, i.e. (x[1..6] = foo)[3] is
-not allowed.
+    Something like x[0..<2][3] was done.
 
-Err 5: Illegal lvalue
+Err 3:
 
-Diagnosis: Oops, we are out of luck here :) Try looking at your lvalue
-more carefully, and see that it obeys the rules described
-in section 3 above.
+    Illegal lvalue, a possible lvalue is (x <assign> y)[a]
+
+Diagnosis:
+
+    Something like (x = foo)[2..3] or (x = foo) was taken to be an lvalue.
+
+Err 4:
+
+    Illegal to have (x[a..b] <assign> y) to be the beginning of an lvalue
+
+Diagnosis:
+
+    You did something as described, i.e. (x[1..6] = foo)[3] is not allowed.
+
+Err 5:
+
+    Illegal lvalue
+
+Diagnosis:
+
+    Oops, we are out of luck here :) Try looking at your lvalue more carefully, and see that it obeys the rules described in section 3 above.
 
 ### Coming attractions
 
