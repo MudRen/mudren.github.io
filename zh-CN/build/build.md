@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Build (v2017)
+title: 编译 FluffOS
 ---
 
 ## Fluffos 编译说明
