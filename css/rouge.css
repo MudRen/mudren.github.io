@@ -187,7 +187,10 @@
   color: #f92672;
 }
 
-div[class="highlight"] > pre[class="highlight"] > code {
+div[class="highlight"] > pre {
   background:black;
+}
+
+div[class="highlight"] > pre[class="highlight"] > code {
   padding: 5px;
 }
