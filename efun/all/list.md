@@ -1,3 +1,10 @@
+---
+layout: default
+title: all / list
+---
+
+### Efun Table
+
 efun|token|sem_value|ident_hash_elem_t|min_args|max_args|ret_type|arg_type1|arg_type2|arg_type3|arg_type4|arg_index|Default
 -|-|-|-|-|-|-|-|-|-|-|-|-|-
 trim|F_TRIM|0|0|1|2|TYPE_STRING|T_STRING|T_STRING|T_ANY|T_ANY|0|DEFAULT_NONE

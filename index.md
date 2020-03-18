@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Welcome
+title: FluffOS
 ---
 
 FluffOS is the next generation of MudOS. It starts as an collection of patches on top of last release of MudOS. It has
