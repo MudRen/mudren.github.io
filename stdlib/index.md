@@ -21,6 +21,6 @@ title: stdlib
 
 
 
-This page is auto generated on 2020-03-19 17:18:02 CST for [2f79b52](https://github.com/fluffos/fluffos/tree/2f79b52).
+This page is auto generated on 2020-04-15 11:41:47 CST for [53ac630](https://github.com/fluffos/fluffos/tree/53ac630).
 
 
