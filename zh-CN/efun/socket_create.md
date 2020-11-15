@@ -5,7 +5,7 @@ title: sockets / socket_create
 
 ### 名称
 
-    socket_create() - 创建一个 efun socket
+    socket_create() - 创建一个 socket
 
 ### 语法
 
@@ -14,7 +14,7 @@ title: sockets / socket_create
 
 ### 描述
 
-    socket_create() 创建一个 efun socket。参数 `mode` 决定要创建哪种模式的 socket。目前支持的 socket 模式为:
+    socket_create() 创建一个 socket。参数 `mode` 决定要创建哪种模式的 socket。目前支持的 socket 模式为:
 
     MUD         使用 TCP 协议传输 LPC 类型数据
     STREAM      使用 TCP 协议传输原始数据
@@ -29,9 +29,9 @@ title: sockets / socket_create
 
     参数 `read_callback` 是 socket 接收数据后驱动程序调用的函数名称，此函数原型应该是以下格式：
 
-    void read_callback(int fd, mixed message);
+    void read_callback(int fd, mixed message, void|string addr);
 
-    其中参数 `fd` 是接收到数据的 socket 连接，参数 `message` 是接收到的数据。
+    其中参数 `fd` 是接收到数据的 socket 连接；参数 `message` 是接收到的数据，在非二进制模式下返回值是 utf-8 格式的字符串，在二进制模式下返回值是 buffer；在UDP模式下，第三个参数 `addr` 为客户端IP地址。
 
     参数 `close_callback` 是 socket 意外关闭时驱动程序调用的函数名称（如不是通过 socket_close() 关闭）。此函数原型应该是以下格式：
 

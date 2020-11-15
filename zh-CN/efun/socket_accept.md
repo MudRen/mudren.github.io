@@ -5,7 +5,7 @@ title: sockets / socket_accept
 
 ### 名称
 
-    socket_accept() -在一个 socket 上接受连接
+    socket_accept() - 在一个 socket 上接受连接
 
 ### 语法
 
