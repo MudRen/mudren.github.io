@@ -9,7 +9,7 @@ title: contrib / num_classes.pre
 
 ### 语法
 
-   int num_classes(object ob);
+    int num_classes(object ob);
 
 ### 描述
 
