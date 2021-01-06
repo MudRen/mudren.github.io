@@ -16,8 +16,8 @@ title: object / init
     当 MUDLIB 移动对象 `A` 进入对象 `B`时，游戏驱动的 move_object() 外部函数会做以下行为：
 
     1. 如果 `A` 是生物(living)，让 `A` 呼叫 `B` 的 init() 方法。
-    2. 不管 `A` 是否是生物，让 `B` 中的所有生物呼叫 `A` 的 init() 方法。
-    3. 如果 `A 是生物，让 `A 呼叫 `B` 中所有对象的 init() 方法。
+    2. 如果 `A` 是生物(living)，让 `A` 呼叫 `B` 中所有对象的 init() 方法。
+    3. 不管 `A` 是否是生物，让 `B` 中的所有生物(living)呼叫 `A` 的 init() 方法。
 
     注意：如果一个对象呼叫过 enable_commands() 外部函数，就被认为是生物。
 

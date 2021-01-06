@@ -109,17 +109,26 @@ FluffOS v2019 如果要在 windows 系统下使用，可以在 MSYS2 环境编�
 
 MSYS2 官方网站：https://www.msys2.org/ 下载安装后需运行 Mingw-w64 64 bit，更新系统并安装必须的包，国外镜像速度慢，可以先根据以下配置修改为国内镜像：
 
-编辑 `/etc/pacman.d/mirrorlist.mingw32` ，在文件开头添加：
+编辑 `/etc/pacman.d/mirrorlist.mingw32` ，把以下镜像放在文件开头：
 
-    Server = http://mirrors.ustc.edu.cn/msys2/mingw/i686
+    Server = http://mirror.bit.edu.cn/msys2/mingw/i686/
+    Server = http://mirrors.ustc.edu.cn/msys2/mingw/i686/
+    Server = https://mirrors.sjtug.sjtu.edu.cn/msys2/mingw/i686/
+    Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/i686/
 
-编辑 `/etc/pacman.d/mirrorlist.mingw64` ，在文件开头添加：
+编辑 `/etc/pacman.d/mirrorlist.mingw64` ，把以下镜像放在文件开头：
 
-    Server = http://mirrors.ustc.edu.cn/msys2/mingw/x86_64
+    Server = http://mirror.bit.edu.cn/msys2/mingw/x86_64/
+    Server = http://mirrors.ustc.edu.cn/msys2/mingw/x86_64/
+    Server = https://mirrors.sjtug.sjtu.edu.cn/msys2/mingw/x86_64/
+    Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/x86_64/
 
-编辑 `/etc/pacman.d/mirrorlist.msys` ，在文件开头添加：
+编辑 `/etc/pacman.d/mirrorlist.msys` ，把以下镜像放在文件开头：
 
-    Server = http://mirrors.ustc.edu.cn/msys2/msys/$arch
+    Server = http://mirror.bit.edu.cn/msys2/msys/$arch/
+    Server = http://mirrors.ustc.edu.cn/msys2/msys/$arch/
+    Server = https://mirrors.sjtug.sjtu.edu.cn/msys2/msys/$arch/
+    Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/msys/$arch/
 
 然后执行 `pacman -Sy` 刷新源。
 
