@@ -44,7 +44,7 @@ Build Steps
 ```shell
 $ git clone https://github.com/fluffos/fluffos.git
 $ cd fluffos
-$ git checkout v2019 #(or an v2019 release tag)
+$ git checkout master #(or an release tag)
 ```
 - Upgrade your cmake
 ```shell
@@ -74,7 +74,7 @@ $ brew install cmake pkg-config mysql pcre libgcrypt libevent openssl jemalloc i
 
 3. build same as under linux, you will need to pass two environment variables
 ```shell
-$ make build && cd build
+$ mkdir build && cd build
 $ OPENSSL_ROOT_DIR="/usr/local/opt/openssl" ICU_ROOT="/usr/local/opt/icu4c" cmake ..
 $ make install
 ```
