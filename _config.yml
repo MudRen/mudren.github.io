@@ -5,3 +5,5 @@ url: https://www.fluffos.info
 plugins:
   - jekyll-seo-tag                  # https://github.com/jekyll/jekyll-seo-tag
   - jekyll-sitemap                  # https://github.com/jekyll/jekyll-sitemap/
+
+theme: jekyll-theme-merlot
