@@ -42,6 +42,25 @@ title: EFUN
 </div>
 
 <h2 class="border-bottom py-3 text-uppercase">
+  <img src="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/bookmark.svg"><a class='text-secondary' name="async" href="#async">async</a>
+</h2>
+
+<div class='row'>
+<div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
+<div><a href='async/async_db_exec.html'>async_db_exec</a></div>
+</div>
+<div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
+<div><a href='async/async_getdir.html'>async_getdir</a></div>
+</div>
+<div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
+<div><a href='async/async_read.html'>async_read</a></div>
+</div>
+<div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
+<div><a href='async/async_write.html'>async_write</a></div>
+</div>
+</div>
+
+<h2 class="border-bottom py-3 text-uppercase">
   <img src="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/bookmark.svg"><a class='text-secondary' name="buffers" href="#buffers">buffers</a>
 </h2>
 
@@ -993,6 +1012,9 @@ title: EFUN
 <div><a href='strings/explode.html'>explode</a></div>
 </div>
 <div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
+<div><a href='strings/hash.html'>hash</a></div>
+</div>
+<div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
 <div><a href='strings/implode.html'>implode</a></div>
 </div>
 <div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
@@ -1000,6 +1022,9 @@ title: EFUN
 </div>
 <div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
 <div><a href='strings/ltrim.html'>ltrim</a></div>
+</div>
+<div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
+<div><a href='strings/oldcrypt.html'>oldcrypt</a></div>
 </div>
 <div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
 <div><a href='strings/reg_assoc.html'>reg_assoc</a></div>
@@ -1015,6 +1040,9 @@ title: EFUN
 </div>
 <div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
 <div><a href='strings/set_bit.html'>set_bit</a></div>
+</div>
+<div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
+<div><a href='strings/sha1.html'>sha1</a></div>
 </div>
 <div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
 <div><a href='strings/sprintf.html'>sprintf</a></div>
@@ -1129,7 +1157,16 @@ title: EFUN
 <div><a href='system/strptime.html'>strptime</a></div>
 </div>
 <div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
+<div><a href='system/sys_network_ports.html'>sys_network_ports</a></div>
+</div>
+<div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
+<div><a href='system/sys_reload_tls.html'>sys_reload_tls</a></div>
+</div>
+<div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
 <div><a href='system/time.html'>time</a></div>
+</div>
+<div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
+<div><a href='system/time_ns.html'>time_ns</a></div>
 </div>
 <div class='col-sm-4 col-md-3 col-lg-3 col-xl-2'>
 <div><a href='system/trace_end.html'>trace_end</a></div>
@@ -1144,6 +1181,6 @@ title: EFUN
 
 <div class="alert alert-info my-4" role="alert">
     <img src="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/info.svg">
-    This page is auto generated on 2022-11-07 21:42:34 EST for v2019.20210429-116-g24f357c7-dirty.</a>
+    This page is auto generated on 2023-09-01 15:16:01 EDT for 3e5c788d.</a>
 </div>
 

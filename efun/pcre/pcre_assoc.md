@@ -9,11 +9,12 @@ title: pcre / pcre_assoc
 
 ### SYNOPSIS
 
-    mixed *pcre_assoc(string, string *, mixed *, mixed | void);
+    mixed *pcre_assoc(string input, string *patterns, mixed *token_aray, void|mixed default);
 
 ### DESCRIPTION
 
-    analog with reg_assoc efun for backwards compatibility reasons but utilizing the PCRE library.
+    analog with reg_assoc efun for backwards compatibility reasons but utilizing
+    the PCRE library.
 
 ### SEE ALSO
 
