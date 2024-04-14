@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: doc
 title: pcre / pcre_assoc
 ---
+# pcre_assoc
 
 ### NAME
 
@@ -19,3 +20,4 @@ title: pcre / pcre_assoc
 ### SEE ALSO
 
     reg_assoc(3)
+sssss

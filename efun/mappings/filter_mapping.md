@@ -1,12 +1,13 @@
 ---
-layout: default
+layout: doc
 title: mappings / filter_mapping
 ---
+# filter_mapping
 
 ### NAME
 
-    filter_mapping()  -  remove some elements of a mapping based on a func‐
-    tion
+    filter_mapping()  -  remove some elements of a mapping based on a
+    function
 
 ### SYNOPSIS
 
@@ -15,7 +16,7 @@ title: mappings / filter_mapping
                             object ob,
                             mixed extra,
                             ... );
-    mapping map_mapping( mapping map, function f, mixed extra, ... );
+    mapping filter_mapping( mapping map, function f, mixed extra, ... );
 
 ### DESCRIPTION
 
@@ -27,5 +28,4 @@ title: mappings / filter_mapping
 
 ### SEE ALSO
 
-    filter_array(3), sort_array(3), map(3)
-
+    map_mapping(), filter(), map()
